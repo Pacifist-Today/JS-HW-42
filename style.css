@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    /*font-size: 20px;*/
+}
+
+.current_album {
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+.select_albums {
+    margin-right: 15px;
+}
+
+.search_by_number {
+    margin-right: 15px;
+    width: 100px;
+}
+
+.person {
+    display: flex;
+}
+
+.person_user_id {
+    margin-right: 10px;
+}
+
+.person_id {
+    margin-right: 10px;
+}
+
+#albums_container {
+    display: flex;
+    /*justify-content: space-around;*/
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.photo {
+    list-style-type: none;
+    width: 18%;
+    font-size: 0;
+    margin: 1% 1%;
+    /*margin-right: 25px;*/
+    /*margin-bottom: 25px;*/
+}
+
+.photo img {
+    width: 100%;
+}
+
+/*.users_container {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
