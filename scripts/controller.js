@@ -4,18 +4,22 @@ export class Controller {
     constructor(model, view) {
         this.model = model
         this.view = view
+        this.idListUrl = `https://jsonplaceholder.typicode.com/albums`
     }
 
     handlers = () => {
+        const selectAlbumsSelector = document.querySelector(`#select_albums`)
+        const clearPageSelector = document.querySelector(`#clear_page`)
+        const searchNumberSelector = document.querySelector(`#search_by_number`)
+
         document.addEventListener(`DOMContentLoaded`, this.loadHandler)
-        document.querySelector(`#select_albums`).addEventListener(`change`, this.selectHandler)
-        document.querySelector(`#clear_page`).addEventListener(`click`, this.clearHandler)
-        document.querySelector(`#search_by_number`).addEventListener('input', this.searchHandler)
+        selectAlbumsSelector.addEventListener(`change`, this.selectHandler)
+        clearPageSelector.addEventListener(`click`, this.clearHandler)
+        searchNumberSelector.addEventListener('input', this.searchHandler)
     }
 
     loadHandler = () => {
-        const idListUrl = `https://jsonplaceholder.typicode.com/albums`
-        fetch(idListUrl)
+        fetch(this.idListUrl)
             .then(response => response.json())
             .then(response => {
                 this.model.setData(response)
